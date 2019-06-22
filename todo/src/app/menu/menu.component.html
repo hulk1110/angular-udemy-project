@@ -2,15 +2,16 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
     <div><a href="www.ndtv.com" class="navbar-brand"> My Git Hub Repo</a></div>
+    
     <ul class="navbar-nav">
-      <li><a routerLink="/welcome/nishant" class="nav-link">Home</a></li>
-      <li><a routerLink="/todos" class="nav-link">Todos</a></li>
+      <li><a *ngIf="authenticationService.isUserLoggedIN()" routerLink="/welcome/nishant" class="nav-link">Home</a></li>
+      <li><a *ngIf="authenticationService.isUserLoggedIN()" routerLink="/todos" class="nav-link">Todos</a></li>
 
 
     </ul>
 
     <ul class="navbar-nav navbar-collapse justify-content-end">
-      <li><a routerLink="/login" class="nav-link">Login</a></li>
+      <li><a *ngIf ="!authenticationService.isUserLoggedIN()"routerLink="/login" class="nav-link">Login</a></li>
       <li><a routerLink="/logout" class="nav-link">Logout</a></li>
 
 
