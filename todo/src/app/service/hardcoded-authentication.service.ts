@@ -23,4 +23,8 @@ export class HardcodedAuthenticationService {
     const user = sessionStorage.getItem('authenticateruser');
     return !(user === null);
   }
+
+  logout() {
+    sessionStorage.removeItem('authenticateruser');
+  }
 }
